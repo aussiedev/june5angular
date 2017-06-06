@@ -1,0 +1,45 @@
+<h1>City</h1>
+
+<p>This is a simple example of an Angular component.</p>
+
+<p>Current City: <strong>{{ currentCityName }}</strong></p>
+
+<form>
+    <table class="table">
+        <tr>
+            <th colspan="2">Add a new city</th>
+        </tr>
+        <tr>
+            <td>
+                City Name
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Please enter Aadhar number" [(ngModel)]="newCityName" name="cityName" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button value="Submit" (click)="addCity()" class="btn btn-primary">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<p *ngIf="!cities"><button (click)="showCities()">Show More Cities...</button></p>
+
+<!--<p *ngIf="!cities"><em>Loading...</em></p>-->
+
+<table class='table' *ngIf="cities">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let city of cities">
+            <td>{{ city }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
